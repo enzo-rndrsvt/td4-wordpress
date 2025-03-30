@@ -1,62 +1,89 @@
-<p align="center">
-  <a href="https://roots.io/bedrock/">
-    <img alt="Bedrock" src="https://cdn.roots.io/app/uploads/logo-bedrock.svg" height="100">
-  </a>
-</p>
+# Portfolio WordPress - Projet TD4
 
-<p align="center">
-  <a href="https://packagist.org/packages/roots/bedrock">
-    <img alt="Packagist Installs" src="https://img.shields.io/packagist/dt/roots/bedrock?label=projects%20created&colorB=2b3072&colorA=525ddc&style=flat-square">
-  </a>
+## Liens Importants
+- **Portfolio** : https://portfolio.enzorv.dev
+- **Panel Admin** : https://portfolio.enzorv.dev/wp/wp-admin
+- **PhpMyAdmin** : https://pma.enzorv.dev
 
-  <a href="https://packagist.org/packages/roots/wordpress">
-    <img alt="roots/wordpress Packagist Downloads" src="https://img.shields.io/packagist/dt/roots/wordpress?label=roots%2Fwordpress%20downloads&logo=roots&logoColor=white&colorB=2b3072&colorA=525ddc&style=flat-square">
-  </a>
-  
-  <img src="https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/roots/bedrock/master/composer.json&label=wordpress&logo=roots&logoColor=white&query=$.require[%22roots/wordpress%22]&colorB=2b3072&colorA=525ddc&style=flat-square">
+## Identifiants
+### Panel Admin
+- **Utilisateur** : `root`
+- **Mot de passe** : `root`
 
-  <a href="https://github.com/roots/bedrock/actions/workflows/ci.yml">
-    <img alt="Build Status" src="https://img.shields.io/github/actions/workflow/status/roots/bedrock/ci.yml?branch=master&logo=github&label=CI&style=flat-square">
-  </a>
+### Base de Données
+- **Nom** : `td4_wordpress`
+- **Utilisateur** : `td4_wordpress_user`
+- **Mot de passe** : `vU1KetG1GKOOWLGBE9r+vA==`
 
-  <a href="https://twitter.com/rootswp">
-    <img alt="Follow Roots" src="https://img.shields.io/badge/follow%20@rootswp-1da1f2?logo=twitter&logoColor=ffffff&message=&style=flat-square">
-  </a>
-</p>
 
-<p align="center">WordPress boilerplate with Composer, easier configuration, and an improved folder structure</p>
 
-<p align="center">
-  <a href="https://roots.io/bedrock/">Website</a> &nbsp;&nbsp; <a href="https://roots.io/bedrock/docs/installation/">Documentation</a> &nbsp;&nbsp; <a href="https://github.com/roots/bedrock/releases">Releases</a> &nbsp;&nbsp; <a href="https://discourse.roots.io/">Community</a>
-</p>
+## Explication des étapes réalisées
+### 1. Installation et Configuration
+* Installation de Bedrock à l'aide de composer
+* Installation du thème `astra` depuis le panel admin de wordpress
+* Création d'un dossier `astra-child` avec les fichiers `functions.php` et `style.css`
 
-## Sponsors
+### 2. Création du Custom Post Type (CPT)
+* Création d'un CPT depuis le site https://generatewp.com/post-type/
+* Ajout du CPT dans un fichier `cpt-portfolio.php`
+* Ajout de la configuration pour le cpt dans le fichier `functions.php`
 
-Bedrock is an open source project and completely free to use. If you've benefited from our projects and would like to support our future endeavors, please consider [sponsoring Roots](https://github.com/sponsors/roots).
+### 3. Ajout des Champs Personnalisés avec SCF
+* Installation du plugin `Secure Custom Field` depuis le panel admin de wordpress
+* Création depuis l'onglet `SCF` un groupe de champs pour le CPT `portfolio`
+* Ajout de la configuration pour que les champs SCF ne soient affichés que sur le CPT `portfolio`
 
-<div align="center">
-<a href="https://carrot.com/"><img src="https://cdn.roots.io/app/uploads/carrot.svg" alt="Carrot" width="120" height="90"></a> <a href="https://wordpress.com/"><img src="https://cdn.roots.io/app/uploads/wordpress.svg" alt="WordPress.com" width="120" height="90"></a> <a href="https://worksitesafety.ca/careers/"><img src="https://cdn.roots.io/app/uploads/worksite-safety.svg" alt="Worksite Safety" width="120" height="90"></a> <a href="https://www.itineris.co.uk/"><img src="https://cdn.roots.io/app/uploads/itineris.svg" alt="Itineris" width="120" height="90"></a> <a href="https://bonsai.so/"><img src="https://cdn.roots.io/app/uploads/bonsai.svg" alt="Bonsai" width="120" height="90"></a> <a href="https://fusepress.co/sp/sign-up/"><img src="https://cdn.roots.io/app/uploads/fusepress.svg" alt="FusePress" width="120" height="90"></a>
-</div>
 
-## Overview
+### 4. Affichage des Réalisations
+* Création d'un fichier `archive-portfolio.php` pour afficher l'ensemble des créations
+* Création d'un fichier `single-portfolio.php` pour afficher une création
+* Ajout de HTML et de PHP pour mettre en forme
+* Ajout d'un fichier `style.css` pour personnaliser l'affichage
 
-Bedrock is a WordPress boilerplate for developers that want to manage their projects with Git and Composer. Much of the philosophy behind Bedrock is inspired by the [Twelve-Factor App](http://12factor.net/) methodology, including the [WordPress specific version](https://roots.io/twelve-factor-wordpress/).
+### 5. Création de la Homepage
+* La page a été créée a l'aide du thème parent
+* Ajout d'une description rapide
+* Ajout de timeline sur le parcours scolaire et professionnel
+* Ajout d'un tableau de ma liste de compétences techniques et logicielles
+* Ajout de mes 3 derniers projets à l'aide d'un éléments du plugin `postX`
 
-- Better folder structure
-- Dependency management with [Composer](https://getcomposer.org)
-- Easy WordPress configuration with environment specific files
-- Environment variables with [Dotenv](https://github.com/vlucas/phpdotenv)
-- Autoloader for mu-plugins (use regular plugins as mu-plugins)
-- Enhanced security (separated web root and secure passwords with [wp-password-bcrypt](https://github.com/roots/wp-password-bcrypt))
 
-## Getting Started
+### 6. Gestion et Livraison du Projet
+* Rédaction d'un `README.md`
+* Export de la base de données depuis le panel de phpmyadmi
 
-See the [Bedrock installation documentation](https://roots.io/bedrock/docs/installation/).
+## Difficultés rencontrées
+* Beaucoup de problèmes lié a la connexion SQL en local, obligé de passer sur un développement directement sur un vps
+* Difficulté à comprendre l'utilisation des CPT
+* La personnalisation du `style.css` ne marche pas
 
-## Stay Connected
+## Installation du projet
+1. **Clonez le projet**
+```sh
+git clone https://github.com/enzo-rndrsvt/td4-wordpress .
+cd td4-wordpress
+```
 
-- Join us on Discord by [sponsoring us on GitHub](https://github.com/sponsors/roots)
-- Participate on [Roots Discourse](https://discourse.roots.io/)
-- Follow [@rootswp on Twitter](https://twitter.com/rootswp)
-- Read the [Roots Blog](https://roots.io/blog/)
-- Subscribe to the [Roots Newsletter](https://roots.io/newsletter/)
+2. **Installez les dépendances**
+```sh
+composer install
+```
+
+3. **Configurez les variables d'environnements**
+Ajoutez un fichier `.env` et modifiez les valeurs selon votre configuration
+```js
+DB_NAME=
+DB_USER=
+DB_PASSWORD=
+DB_HOST=
+
+WP_ENV=development
+WP_HOME=
+WP_SITEURL=${WP_HOME}/wp
+```
+
+4. **Importez la base de données** `portfolio.sql`
+
+5. **Lancez votre php**
+
+
